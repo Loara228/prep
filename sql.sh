@@ -8,7 +8,7 @@ read -p "new user password: " password
 
 sudo mysql -u root -p << EOF
 CREATE USER '$user'@'localhost' IDENTIFIED BY '$password';
-GRANT ALL PRIVILEGES ON *.* TO 'test'@'localhost';
+GRANT ALL PRIVILEGES ON *.* TO '$user'@'localhost';
 FLUSH PRIVILEGES;
 SELECT user FROM mysql.user;
 EOF
